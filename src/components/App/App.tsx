@@ -38,8 +38,8 @@ export default function App(){
 
     return(<div className={css.app}>
             <CafeInfo/>
-            {totalVotes > 0 ? <VoteOptions onVote = {handleVote} onReset={resetVote} canReset = {true}/>: <VoteOptions onVote = {handleVote} onReset={resetVote} canReset = {false}/>}
+            <VoteOptions onVote = {handleVote} onReset={resetVote} canReset = {totalVotes > 0}/>
             
-            {totalVotes > 0 ? <VoteStats vote={votes} totalVotes = {totalVotes} positiveRate={positiveRate}/> : <Notification/>}
+            {totalVotes > 0 ? <VoteStats votes={votes} totalVotes = {totalVotes} positiveRate={positiveRate}/> : <Notification/>}
         </div>)
 }
